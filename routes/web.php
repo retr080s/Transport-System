@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DataController;
 use App\Models\Posting;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +16,10 @@ use App\Models\Posting;
 */
 
 // Index (main page)
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [ShowController::class, 'show']);
 
 // Show form 
-Route::get('/create', function(){
-    return view('listings.post');
-});
+Route::get('/create', [ShowController::class, 'showForm']);
 
 // Store form data to DB
 Route::post('/create', function() {

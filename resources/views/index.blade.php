@@ -17,9 +17,6 @@
         <!-- NavBar -->
         @include('components.navbar')
 
-        <!-- Form Submit -->
-        {{-- @include('form.post') --}}
-
         <!-- Menu Showing Stuff  -->
         @include('components.table')
 
