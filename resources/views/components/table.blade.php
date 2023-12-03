@@ -54,6 +54,7 @@
         </thead>
         <tbody>
             
+            @foreach ($data as $dataa)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td class="w-4 p-4">
                     <div class="flex items-center">
@@ -61,27 +62,27 @@
                         <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
                     </div>
                 </td>
-                @foreach ($data as $data)
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {{ $data->pickup }}
+                    {{ $dataa->pickup }}
                 </th>
                 <td class="px-6 py-4">
-                    {{ $data->dropoff }}
+                    {{ $dataa->dropoff }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $data->date }}
+                    {{ $dataa->date }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $data->weight }}
+                    {{ $dataa->weight }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $data->price }}
+                    {{ $dataa->price }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $data->broker }}
+                    {{ $dataa->broker }}
                 </td>
-                @endforeach
-            </tr>          
-            </tbody>
-        </table>
+            </tr>  
+            @endforeach
+        </tbody>
+    </table>
+    {{ $data->links() }}  
 </div>
